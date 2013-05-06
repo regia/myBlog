@@ -15,6 +15,9 @@ DONE override paginator.py method page and override class Page with add def page
 TODO  short and long description
 
 DONE code highlight
-TODO plugin with <pre><code> button to tinymce
 HALF-DONE RSS fix posted links(need change site domain name)
 TODO Search
+
+tinyMCE
+TODO plugin with <pre><code> button to tinymce
+TODO fileuploader
