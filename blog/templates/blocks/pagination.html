@@ -1,0 +1,13 @@
+<div class="pagination">
+    {% if posts.has_previous %}
+        <a href="/blog/page/1"><b>First</b></a>
+        <a href="/blog/page/{{ posts.previous_page_number }}"><b>Prev</b></a>
+    {% endif %}
+    <span>
+            Page {{ posts.number }} of {{ posts.pages }} {% comment %}need add method pages in override paginator.py def pages(self):return self.paginator.num_pages{% endcomment %}
+        </span>
+    {% if posts.has_next %}
+        <a href="/blog/page/{{ posts.next_page_number }}"><b>Next</b></a>
+        <a href="/blog/page/{{ posts.pages }}"><b>Last</b></a>
+    {% endif %}
+</div>

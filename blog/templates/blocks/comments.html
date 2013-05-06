@@ -1,0 +1,71 @@
+<div class="comments">
+    <span class="title">Comments</span>
+    {% load comments %}
+    {% get_comment_count for post as comment_count %}
+    <p>{{ comment_count }} comments have been added.</p>
+    {% get_comment_list for post as comment_list %}
+    {% for comment in comment_list %}
+        <p>Posted by: <i>{{ comment.user_name }}</i> on {{ comment.submit_date }}</p>
+        <span class="comment">{{ comment.comment }}</span>
+        <br/>
+    {% endfor %}
+    <br/>
+
+    <div class="add">
+        <span class="title">Add Comment:</span>
+        {% get_comment_form for post as form %}
+        <form action="{% comment_form_target %}" method="POST">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>
+                        <label for="id_name">Name:</label>
+                    </th>
+                    <td>
+                        {{ form.name }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="id_url">URL:</label>
+                    </th>
+                    <td>
+                        {{ form.url }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="id_email">Email address:</label>
+                    </th>
+                    <td>
+                        {{ form.email }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="id_comment">Comment:</label>
+                    </th>
+                    <td>
+                        {{ form.comment }}
+                    </td>
+                </tr>
+                <tr style="display: none">
+                    <th>
+                        <label for="id_honeypot">Leave empty:</label>
+                    </th>
+                    <td>
+                        {{ form.honeypot }}
+                    </td>
+                </tr>
+            </table>
+            {{ form.content_type }}
+            {{ form.object_pk }}
+            {{ form.timestamp }}
+            {{ form.security_hash }}<br/>
+            <input type="hidden" name="next"
+                   value="{% url 'blog.views.post' post.created|date:"Y" post.created|date:"m" post.slug %}"/>
+            <input type="submit" value="Add comment" id="id_submit"/>
+            {% comment %}<input type="submit" name="preview" value="Preview">{% endcomment %}
+        </form>
+    </div>
+</div>

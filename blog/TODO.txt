@@ -1,0 +1,20 @@
+DONE Ссылки на записи как /blog/year/month/slug
+DONE Pagination
+HALF-DONE Tags and tags cloud(show tag cloud with diff styling but don't know how for now)
+TODO Archives
+4/5-DONE Comments (need styling) Next level add editing-deleting comments by admin and users in own ways
+4/5-DONE Design
+
+DONE(dog-nail) correct links for posts and rss links(dog-nail :( )
+
+
+TODO breadcrambs
+
+DONE override paginator.py method page and override class Page with add def pages.
+
+TODO  short and long description
+
+DONE code highlight
+TODO plugin with <pre><code> button to tinymce
+HALF-DONE RSS fix posted links
+TODO Search

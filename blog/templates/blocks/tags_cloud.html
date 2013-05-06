@@ -1,0 +1,9 @@
+<div id="tags_cloud">
+    <h2>Tags</h2>
+    <ul>
+        {% for tag in tags %}
+            <li class="item"><a style="font-size: {{ tag.count|add:10 }}px;"
+                                href="/blog/tag/{{ tag.name }}">{{ tag.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

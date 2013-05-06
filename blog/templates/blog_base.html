@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My blog</title>
+    {% block extrahead %}
+    {% endblock %}
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/blog.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="{{ STATIC_URL }}css/monokai.css"/>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<header>
+    <div id="top_menu">
+        <div class="logo"><a href="/blog">Regedi's Blog</a></div>
+        <ul class="main_menu">
+            <li><a href="/blog">Main</a></li>
+            <li><a href="/blog">About</a></li>
+            <li><a href="/blog">Contacts</a></li>
+            <li><a href="/blog">Weather</a></li>
+        </ul>
+    </div>
+</header>
+<div id="main">
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        {% load blocks %}
+        {% tags_list %}
+        {% tags_cloud %}
+
+        <div class="rss">
+            <a href="/blog/feed">RSS Feed</a>
+        </div>
+    </div>
+</div>
+<header>
+    <hr/>
+    <span class="copyright">Regedi's blog. 2013. All rights reserved</span>
+</header>
+</body>
+</html>    
