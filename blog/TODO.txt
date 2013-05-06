@@ -20,4 +20,4 @@ TODO Search
 
 tinyMCE
 TODO plugin with <pre><code> button to tinymce
-TODO fileuploader
+TODO fileuploader (http://dustweb.ru/en/projects/tinymce_images/)
