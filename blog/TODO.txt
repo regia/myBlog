@@ -19,5 +19,5 @@ HALF-DONE RSS fix posted links(need change site domain name)
 TODO Search
 
 tinyMCE
-TODO plugin with <pre><code> button to tinymce
+DONE plugin with <pre><code> button to tinymce (http://owlman.net/django/podsvetka-koda-v-tinymce-s-pomoshyu-highlight/)
 TODO fileuploader (http://dustweb.ru/en/projects/tinymce_images/)
