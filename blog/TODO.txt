@@ -21,3 +21,6 @@ TODO Search
 tinyMCE
 DONE plugin with <pre><code> button to tinymce (http://owlman.net/django/podsvetka-koda-v-tinymce-s-pomoshyu-highlight/)
 TODO fileuploader (http://dustweb.ru/en/projects/tinymce_images/)
+
+TODO user AUTH
+TODO editing posts from frontend
