@@ -1,4 +1,5 @@
 # Create your views here.
+from django.contrib.auth.decorators import permission_required
 from blog.models import Post
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -30,3 +31,18 @@ def mainpage(request, pages="1"):
 def post(request, year, month, slug_id):
     post_detail = Post.objects.get(slug=slug_id)
     return render_to_response('post.html', {'post': post_detail}, context_instance=RequestContext(request))
+
+
+@permission_required('blog.add_post')
+def add_post(request):
+    pass
+
+
+@permission_required('blog.change_post')
+def change_post(request):
+    pass
+
+
+@permission_required('blog.delete_post')
+def delete_post(request):
+    pass

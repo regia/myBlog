@@ -19,6 +19,15 @@
                     <span class="readmore"><a href="/blog/{{ post.created|date:"Y/m/" }}{{ post.slug }}/">Reed
                         more...</a></span>
                 {% endif %}
+                {% if perms.blog.add_post %}
+                    <p>You have permission to add post.</p>
+                {% endif %}
+                {% if perms.blog.change_post %}
+                    <p>You have permission to change post.</p>
+                {% endif %}
+                {% if perms.blog.delete_post %}
+                    <p>You have permission to delete post.</p>
+                {% endif %}
             </div>
             <br/>
 

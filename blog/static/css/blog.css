@@ -172,16 +172,16 @@ header {
     text-decoration: none;
 }
 
-
-.rss ul{
+.rss ul {
     list-style-type: none;
 }
 
-.rss ul li{
-    background: url("/static/img/feed_ico_20x20_black_orange.png") no-repeat scroll 0px 2px transparent;
+.rss ul li {
+    background: url("/static/img/feed_ico_20x20_black_orange.png") no-repeat scroll 0px 4px transparent;
+    line-height: 25px;
 }
 
-.rss ul li a{
+.rss ul li a {
     padding-left: 30px;
     text-decoration: none;
 }
