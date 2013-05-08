@@ -21,7 +21,7 @@ template_external_list_url : "lists/template_list.js",
 external_link_list_url : "lists/link_list.js",
 external_image_list_url : "lists/image_list.js",
 media_external_list_url : "lists/media_list.js",
-content_css: "lstng/js/hljs/styles/monokai.css",
+content_css: "/static/js/tiny_mce/plugins/lstng/js/hljs/styles/monokai.css",
 
 // Style formats
 style_formats : [
