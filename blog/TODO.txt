@@ -24,3 +24,7 @@ TODO fileuploader (http://dustweb.ru/en/projects/tinymce_images/)
 
 TODO user AUTH (https://docs.djangoproject.com/en/1.5/topics/auth/default/#auth-web-requests)
 TODO editing posts from frontend
+
+TODO ^blog/ ^(?P<year>\d{4})/$
+     ^blog/ ^(?P<year>\d{4})/(?P<month>\d{2})/$
+     ^blog/ ^(?P<year>\d{4})/(?P<month>\d{2})/(?P<slug>[-\w]+)/$
