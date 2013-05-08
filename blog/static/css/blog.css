@@ -71,6 +71,9 @@ header {
 #sidebar {
     width: 200px;
     float: left;
+    border-left: 2px dashed black;
+    margin-left: -22px;
+    padding-left: 20px;
 
 }
 
