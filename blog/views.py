@@ -33,23 +33,15 @@ def post(request, year, month, slug_id):
     return render_to_response('post.html', {'post': post_detail}, context_instance=RequestContext(request))
 
 
-def year_month(request, year="0", month="0"):
+def view_by_date(request, year="0", month="0"):
     if year != "0" and month == "0":
-        posts_list_by_year = Post.objects.filter(created__year=year).order_by('-created')
-        if len(posts_list_by_year) > 0:
-        #Post.objects.filter(publish_date__year=year,publish_date__month=month).
-            return render_to_response('blog.html', {'posts': posts_list_by_year},
-                                      context_instance=RequestContext(request))
-        else:
-            return render_to_response('nocontent.html', {'posts': None}, context_instance=RequestContext(request))
+        posts_list_by_date = Post.objects.filter(created__year=year).order_by('-created')
     elif year != "0" and month != "0":
-        posts_list_by_year_month = Post.objects.filter(created__year=year, created__month=month).order_by('-created')
-        if len(posts_list_by_year_month) > 0:
-        #Post.objects.filter(publish_date__year=year,publish_date__month=month).
-            return render_to_response('blog.html', {'posts': posts_list_by_year_month},
-                                      context_instance=RequestContext(request))
-        else:
-            return render_to_response('nocontent.html', {'posts': None}, context_instance=RequestContext(request))
+        posts_list_by_date = Post.objects.filter(created__year=year, created__month=month).order_by('-created')
+    if len(posts_list_by_date) > 0:
+        return render_to_response('blog.html', {'posts': posts_list_by_date}, context_instance=RequestContext(request))
+    else:
+        return render_to_response('nocontent.html', {'posts': None}, context_instance=RequestContext(request))
 
 
 @permission_required('blog.add_post')
