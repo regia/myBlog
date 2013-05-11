@@ -33,10 +33,10 @@ def post(request, year, month, slug_id):
     return render_to_response('post.html', {'post': post_detail}, context_instance=RequestContext(request))
 
 
-def view_by_date(request, year="0", month="0"):
-    if year != "0" and month == "0":
+def view_by_date(request, year, month=None):
+    if month is None:
         posts_list_by_date = Post.objects.filter(created__year=year).order_by('-created')
-    elif year != "0" and month != "0":
+    else:
         posts_list_by_date = Post.objects.filter(created__year=year, created__month=month).order_by('-created')
     if len(posts_list_by_date) > 0:
         return render_to_response('blog.html', {'posts': posts_list_by_date}, context_instance=RequestContext(request))
