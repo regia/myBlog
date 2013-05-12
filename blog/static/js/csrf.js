@@ -36,10 +36,3 @@ $(document).ajaxSend(function (event, xhr, settings) {
         xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
     }
 });
-/**
- * Created with PyCharm.
- * User: Regedi
- * Date: 12.05.13
- * Time: 8:02
- * To change this template use File | Settings | File Templates.
- */
