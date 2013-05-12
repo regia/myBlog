@@ -34,5 +34,5 @@ TODO add paginator for sorted by year and year-month
 DONE add jquery profile block login form
 TODO extend User model (http://ryanwest.info/blog/2011/django-tip-5-extending-contrib-auth-models-user/)
 
-TODO styling for user profile block and buttons
+4/5 DONE styling for user profile block and buttons
 TODO resize profile no-photo
