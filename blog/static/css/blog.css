@@ -44,7 +44,7 @@ header {
 }
 
 #main {
-    max-width: 1040px;
+    max-width: 1090px;
     margin: 0 auto;
 }
 
@@ -69,7 +69,7 @@ header {
 }
 
 #sidebar {
-    width: 200px;
+    width: 250px;
     float: left;
     border-left: 2px dashed black;
     margin-left: -22px;
@@ -180,11 +180,73 @@ header {
 }
 
 .rss ul li {
-    background: url("/static/img/feed_ico_20x20_black_orange.png") no-repeat scroll 0px 4px transparent;
+    background: url("../img/feed_ico_20x20_black_orange.png") no-repeat scroll 0px 4px transparent;
     line-height: 25px;
 }
 
 .rss ul li a {
     padding-left: 30px;
     text-decoration: none;
+}
+
+.loginform {
+    text-align: center;
+}
+
+.login_errors {
+    background: url("../img/icon_error.gif") no-repeat scroll 5px 0.3em #FFFFCC;
+    border: 1px solid red;
+    color: red;
+    display: block;
+    font-size: 12px !important;
+    font-family: "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    margin: 0 0 3px;
+    padding: 4px 5px 4px 25px;
+}
+
+.loading-ajax {
+    background: none repeat scroll 0 0 rgba(175, 175, 175, 0.7);
+    position: absolute;
+    width: 250px;
+    height: 110px;
+
+}
+
+.loading-ajax IMG {
+    position: relative;
+    left: 15%;
+    top: 40%;
+}
+
+button {
+    background-color: linen;
+    border: 1px solid black;
+    border-radius: 5px 5px 5px 5px;
+    display: inline-block;
+}
+
+.profile {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/*clear: both css3 trick*/
+.profile:before,
+.profile:after {
+    content: "";
+    display: block;
+}
+
+.profile:after {
+    clear: both;
+}
+
+.profile img {
+    float: left;
+    height: 150px;
+}
+
+.actions {
+    line-height: 25px;
+    margin-top: 7px;
 }

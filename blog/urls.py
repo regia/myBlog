@@ -1,5 +1,6 @@
 #coding: utf-8 
 from django.conf.urls import patterns, url, include
+from blog.templatetags import blocks
 from blog.utils.rss import BlogFeed
 
 urlpatterns = patterns('',
@@ -13,4 +14,6 @@ urlpatterns = patterns('',
                        url(r'^tag/(?P<tag>.*)/$', 'blog.views.tagpage'),
                        url(r'^comments/', include('django.contrib.comments.urls')),
                        url(r'^feed/', BlogFeed()),
+                       url(r'^login/$', 'blog.views.log_in'),
+                       url(r'^logout/$', 'blog.views.log_out'),
 )

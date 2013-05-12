@@ -1,11 +1,14 @@
-# Create your views here.
+import json
 from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.forms import AuthenticationForm
+from django.http import HttpResponseRedirect, HttpResponse
+from django.views.decorators.csrf import csrf_protect
 from blog.models import Post
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-#from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.paginator import EmptyPage, PageNotAnInteger
 from utils.mypaginator import MyPaginator
+from django.contrib.auth import authenticate, login, logout
 
 
 def tagpage(request, tag):
@@ -42,6 +45,42 @@ def view_by_date(request, year, month=None):
         return render_to_response('blog.html', {'posts': posts_list_by_date}, context_instance=RequestContext(request))
     else:
         return render_to_response('nocontent.html', {'posts': None}, context_instance=RequestContext(request))
+
+
+@csrf_protect
+def log_in(request):
+    # if request.method == 'POST':
+    #     form = AuthenticationForm(request.POST)
+    #     if form.is_valid():
+    #         login(request, form.get_user())
+    #         return HttpResponseRedirect('/blog/')
+    #     else:
+    #         form = AuthenticationForm()
+    #         render_to_response('blocks/login_form.html', {'form': form}, context_instance=RequestContext(request))
+    # else:
+    #     form = AuthenticationForm()
+    #     render_to_response('blocks/login_form.html', {'form': form}, context_instance=RequestContext(request))
+    if request.is_ajax():
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return HttpResponse(json.dumps({'redirect': '/blog/'}), content_type="application/json")
+
+            else:
+                return HttpResponse(json.dumps({'errors': 'The user account is inactive now!'}),
+                                    content_type="application/json")
+
+        else:
+            return HttpResponse(json.dumps({'errors': 'Invalid login or password!'}), content_type="application/json")
+
+
+@csrf_protect
+def log_out(request):
+    logout(request)
+    return HttpResponseRedirect('/blog/')
 
 
 @permission_required('blog.add_post')

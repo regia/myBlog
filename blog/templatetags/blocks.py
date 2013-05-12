@@ -1,6 +1,9 @@
 from django import template
+from django.http import HttpResponseRedirect
 from taggit.models import *
 from blog.models import Post
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
 
 register = template.Library()
 
@@ -20,3 +23,16 @@ def tags_cloud():
     for tag in tags_object:
         tags.append({'name': tag, 'count': posts.filter(tags__name=tag).count()})
     return {"tags": tags}
+
+
+    # @register.inclusion_tag('blocks/login_form.html', takes_context = True)
+    # def log_in(context):
+    #     request = context['request']
+    #     if request.method == 'POST':
+    #         form = AuthenticationForm(data=request.POST)
+    #         if form.is_valid():
+    #             login(request, form.get_user())
+    #             return HttpResponseRedirect('/blog/2013/')
+    #     else:
+    #         form = AuthenticationForm(request)
+    #         return {'form': form}

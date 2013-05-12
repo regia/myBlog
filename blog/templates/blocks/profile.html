@@ -1,5 +1,18 @@
 {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+    <div class="profile">
+        Welcome back, <b>{{ user.username|capfirst }}</b>
+        <img src="{{ STATIC_URL }}img/no-photo.png"/>
+
+        <div class="actions">
+            <button>Add post</button>
+            <form method="post" action="{% url 'blog.views.log_out' %}">
+                {% csrf_token %}
+                <button type="submit">Sign out</button>
+                <input type="hidden" name="next" value="{{ next }}"/>
+            </form>
+        </div>
+    </div>
 {% else %}
-    <p>Welcome, new user. Please log in.</p>
+    <p>Welcome, <b>Guest</b>. Please Sign in.</p>
+    {% include "blocks/login_form.html" %}
 {% endif %}
