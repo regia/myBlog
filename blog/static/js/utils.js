@@ -63,7 +63,7 @@ $(document).ready(function () {
         });
     });
 
-    //show loading bar o ajax events
+    //show loading bar on ajax events
     $(document).ajaxStart(function () {
         $('.loading-ajax').show();
     }).ajaxStop(function () {
