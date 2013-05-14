@@ -128,6 +128,8 @@ import os
 
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates').replace('\\', '/'),)
 
+AUTH_PROFILE_MODULE = 'blog.profile'
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',

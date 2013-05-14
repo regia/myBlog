@@ -1,8 +1,11 @@
 {% if user.is_authenticated %}
     <div class="profile">
         Welcome back, <b>{{ user.username|capfirst }}</b>
-        <img src="{{ STATIC_URL }}img/no-photo.png"/>
-
+        {% if user.profile.userpic %}
+            <img src="{{ MEDIA_URL }}{{ user.profile.userpic }}"/>
+        {% else %}
+            <img src="{{ STATIC_URL }}img/no-photo.png"/>
+        {% endif %}
         <div class="actions">
             <button>Add post</button>
             <form method="post" action="{% url 'blog.views.log_out' %}">

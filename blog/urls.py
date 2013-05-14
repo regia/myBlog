@@ -1,6 +1,5 @@
 #coding: utf-8 
 from django.conf.urls import patterns, url, include
-from blog.templatetags import blocks
 from blog.utils.rss import BlogFeed
 
 urlpatterns = patterns('',

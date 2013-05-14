@@ -207,7 +207,7 @@ header {
 .loading-ajax {
     background: none repeat scroll 0 0 rgba(175, 175, 175, 0.7);
     position: absolute;
-    width: 250px;
+    width: 260px;
     height: 110px;
 
 }
@@ -243,7 +243,8 @@ button {
 
 .profile img {
     float: left;
-    height: 150px;
+    margin-right: 5px;
+    width: 130px;
 }
 
 .actions {
