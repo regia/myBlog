@@ -1,0 +1,10 @@
+<div class="latest_posts">
+    <h2>Latest posts</h2>
+    <ul>
+        {% for post in posts %}
+            <li><a href='/blog/{{ post.created|date:"Y/m/" }}{{ post.slug }}/'>{{ post.title|title }}</a></li>
+        {% empty %}
+            <li>No posts yet</li>
+        {% endfor %}
+    </ul>
+</div>

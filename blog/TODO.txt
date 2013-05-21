@@ -1,9 +1,10 @@
 DONE links on posts like /blog/year/month/slug
 DONE Pagination
 HALF-DONE Tags and tags cloud(show tag cloud with diff styling but don't know how for now)
-TODO add last posts block(5-10)
+DONE add last posts block(5-10)
 TODO Archives
 4/5-DONE Comments (need styling) Next level add editing-deleting comments by admin and users in own ways
+TODO comments moderation, required fields, maybe captcha(math or question)
 4/5-DONE Design
 
 DONE(dog-nail) correct links for posts and rss links(dog-nail :( )

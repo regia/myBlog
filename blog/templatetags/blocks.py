@@ -1,9 +1,9 @@
 from django import template
-from django.http import HttpResponseRedirect
+#from django.http import HttpResponseRedirect
 from taggit.models import *
 from blog.models import Post
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
+#from django.contrib.auth.forms import AuthenticationForm
+#from django.contrib.auth import login
 
 register = template.Library()
 
@@ -24,6 +24,10 @@ def tags_cloud():
         tags.append({'name': tag, 'count': posts.filter(tags__name=tag).count()})
     return {"tags": tags}
 
+@register.inclusion_tag('blocks/latest_posts.html')
+def latest_posts():
+    posts = Post.objects.all().order_by('-created')[:5]
+    return {'posts': posts}
 
     # @register.inclusion_tag('blocks/login_form.html', takes_context = True)
     # def log_in(context):
