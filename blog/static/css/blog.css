@@ -244,7 +244,7 @@ button {
 .profile img {
     float: left;
     margin-right: 5px;
-    width: 130px;
+    max-width: 130px;
 }
 
 .actions {
