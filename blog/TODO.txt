@@ -1,6 +1,7 @@
 DONE links on posts like /blog/year/month/slug
 DONE Pagination
 HALF-DONE Tags and tags cloud(show tag cloud with diff styling but don't know how for now)
+TODO add last posts block
 TODO Archives
 4/5-DONE Comments (need styling) Next level add editing-deleting comments by admin and users in own ways
 4/5-DONE Design
