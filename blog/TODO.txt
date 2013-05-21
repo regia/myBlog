@@ -18,7 +18,8 @@ TODO  short and long description
 
 DONE code highlight
 DONE RSS fix posted links(need change site domain name)
-TODO Search
+TODO Search (for MySQL/Postgres - spfinx http://habrahabr.ru/post/136261/
+	for sqlite3 FTS2,3 http://www.rkblog.rk.edu.pl/w/p/fulltext-search-sqlite-and-django-app/ )
 
 DONE plugin with <pre><code> button to tinymce (http://owlman.net/django/podsvetka-koda-v-tinymce-s-pomoshyu-highlight/)
 TODO fileuploader (http://dustweb.ru/en/projects/tinymce_images/)
