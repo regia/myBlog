@@ -9,4 +9,4 @@ class AddPostForm(ModelForm):
         model = Post
 
     class Media:
-        js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/tiny_mce/textareas.js',)
+        js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/tiny_mce/textareas_frontend.js')
