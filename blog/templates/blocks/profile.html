@@ -1,7 +1,7 @@
 {% if user.is_authenticated %}
     <div class="profile">
         Welcome back, <b>{{ user.username|capfirst }}</b>
-        {% if user.profile.userpic %}
+        {% if user.profile.userpic != NULL %}
             <img src="{{ MEDIA_URL }}{{ user.profile.userpic }}"/>
         {% else %}
             <img src="{{ STATIC_URL }}img/no-photo.png"/>

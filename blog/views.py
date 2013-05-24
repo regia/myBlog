@@ -99,6 +99,7 @@ def add_post(request):
 
     return render_to_response('add_post.html', {'form': form}, context_instance=RequestContext(request))
 
+
 @permission_required('blog.change_post')
 def change_post(request):
     pass
@@ -112,5 +113,5 @@ def delete_post(request):
 def show_message(request):
     message = {'message': ''}
     if "login_required" in request.path:
-        message['message'] = "Please Sign in first!"
+        message['message'] = "Please sign in first or you don't have enough rights to add post"
         return render_to_response('login_required.html', {'message': message}, context_instance=RequestContext(request))

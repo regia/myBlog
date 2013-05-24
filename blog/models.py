@@ -21,7 +21,7 @@ class Post(models.Model):
 
 class Profile(models.Model):
     user = AutoOneToOneField(User, related_name='profile', verbose_name='User', primary_key=True)
-    userpic = models.ImageField(upload_to="userpics/", max_length=200)
+    userpic = models.ImageField(upload_to="userpics/", max_length=500)
     title = models.CharField(max_length=50)
 
     def __unicode__(self):
@@ -43,7 +43,7 @@ class Profile(models.Model):
         image.save(self.userpic.path)
 
 
-def user_post_save(sender, instance, **kwargs):
+def user_post_save(sender, instance, *args, **kwargs):
     # Creates user profile
     profile, new = Profile.objects.get_or_create(user=instance)
 
