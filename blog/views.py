@@ -1,6 +1,5 @@
 import json
 from django.contrib.auth.decorators import permission_required
-from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.decorators.csrf import csrf_protect
 from blog.models import Post
@@ -9,6 +8,7 @@ from django.template import RequestContext
 from django.core.paginator import EmptyPage, PageNotAnInteger
 from utils.mypaginator import MyPaginator
 from django.contrib.auth import authenticate, login, logout
+from forms import AddPostForm
 
 
 def tagpage(request, tag):
@@ -67,7 +67,10 @@ def log_in(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponse(json.dumps({'redirect': '/blog/'}), content_type="application/json")
+                if 'login_required' in request.META['HTTP_REFERER']:
+                    return HttpResponse(json.dumps({'redirect': '/blog/post/add/'}), content_type="application/json")
+                else:
+                    return HttpResponse(json.dumps({'redirect': '/blog/'}), content_type="application/json")
 
             else:
                 return HttpResponse(json.dumps({'errors': 'The user account is inactive now!'}),
@@ -83,10 +86,18 @@ def log_out(request):
     return HttpResponseRedirect('/blog/')
 
 
-@permission_required('blog.add_post')
+@csrf_protect
+@permission_required('blog.add_post', login_url='/blog/login_required/')
 def add_post(request):
-    pass
+    if request.method == 'POST':
+        form = AddPostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/blog')
+    else:
+        form = AddPostForm()
 
+    return render_to_response('add_post.html', {'form': form}, context_instance=RequestContext(request))
 
 @permission_required('blog.change_post')
 def change_post(request):
@@ -96,3 +107,10 @@ def change_post(request):
 @permission_required('blog.delete_post')
 def delete_post(request):
     pass
+
+
+def show_message(request):
+    message = {'message': ''}
+    if "login_required" in request.path:
+        message['message'] = "Please Sign in first!"
+        return render_to_response('login_required.html', {'message': message}, context_instance=RequestContext(request))

@@ -14,5 +14,7 @@ urlpatterns = patterns('',
                        url(r'^comments/', include('django.contrib.comments.urls')),
                        url(r'^feed/', BlogFeed()),
                        url(r'^login/$', 'blog.views.log_in'),
+                       url(r'^login_required/$', 'blog.views.show_message'),
                        url(r'^logout/$', 'blog.views.log_out'),
+                       url(r'^post/add/$', 'blog.views.add_post'),
 )

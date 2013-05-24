@@ -7,7 +7,9 @@
             <img src="{{ STATIC_URL }}img/no-photo.png"/>
         {% endif %}
         <div class="actions">
-            <button>Add post</button>
+            {% if perms.blog.add_post %}
+                <a href="/blog/post/add/">Add post</a>
+            {% endif %}
             <form method="post" action="{% url 'blog.views.log_out' %}">
                 {% csrf_token %}
                 <button type="submit">Sign out</button>

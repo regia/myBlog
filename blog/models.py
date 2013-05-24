@@ -8,12 +8,12 @@ from PIL import Image
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, verbose_name="Title")
     slug = models.SlugField(unique=True, verbose_name='SEO URL')
-    description = models.TextField()
+    description = models.TextField(verbose_name="Description")
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
-    tags = TaggableManager()
+    tags = TaggableManager(verbose_name="Tags")
 
     def __unicode__(self):
         return self.title
