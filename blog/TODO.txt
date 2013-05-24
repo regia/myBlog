@@ -25,7 +25,9 @@ DONE plugin with <pre><code> button to tinymce (http://owlman.net/django/podsvet
 TODO fileuploader (http://dustweb.ru/en/projects/tinymce_images/)
 
 DONE user AUTH (https://docs.djangoproject.com/en/1.5/topics/auth/default/#auth-web-requests)
-TODO editing/adding posts from frontend
+DONE add posts from frontend
+TODO change posts from frontend
+TODO delete posts from frontend
 
 DONE ^blog/ ^(?P<year>\d{4})/$
      ^blog/ ^(?P<year>\d{4})/(?P<month>\d{2})/$
