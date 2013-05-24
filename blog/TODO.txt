@@ -41,3 +41,5 @@ http://www.odmin4eg.ru/2011/django-registration-primer/)
 
 4/5 DONE styling for user profile block and buttons
 DONE resize profile no-photo
+
+TODO Unit tests
