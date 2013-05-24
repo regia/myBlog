@@ -39,6 +39,8 @@ TODO add paginator for sorted by year and year-month
 DONE add jquery profile block login form
 DONE extend User model (http://ryanwest.info/blog/2011/django-tip-5-extending-contrib-auth-models-user/  from django 1.5 use AUTH_USER_MODEL
 
+TODO find save() got an unexpected keyword argument 'force_insert' when try login user
+
 http://www.odmin4eg.ru/2011/django-registration-primer/)
 
 4/5 DONE styling for user profile block and buttons
