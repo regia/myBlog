@@ -1,0 +1,4 @@
+django-cked - wysiwyg editor for django on CKEditor and elFinder
+http://ssbb.me/django-cked/
+
+
