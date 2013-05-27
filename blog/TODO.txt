@@ -1,10 +1,17 @@
 DONE links on posts like /blog/year/month/slug
+
 DONE Pagination
+
 HALF-DONE Tags and tags cloud(show tag cloud with diff styling but don't know how for now)
+
 DONE add last posts block(5-10)
+
 TODO Archives
+
 4/5-DONE Comments (need styling) Next level add editing-deleting comments by admin and users in own ways
+
 TODO comments moderation, required fields, maybe captcha(math or question)
+
 4/5-DONE Design
 
 DONE(dog-nail) correct links for posts and rss links(dog-nail :( )
@@ -17,16 +24,23 @@ DONE override paginator.py method page and override class Page with add def page
 TODO  short and long description
 
 DONE code highlight
+
 DONE RSS fix posted links(need change site domain name)
+
 TODO Search (for MySQL/Postgres - spfinx http://habrahabr.ru/post/136261/
 	for sqlite3 FTS2,3 http://www.rkblog.rk.edu.pl/w/p/fulltext-search-sqlite-and-django-app/ )
 
 DONE plugin with <pre><code> button to tinymce (http://owlman.net/django/podsvetka-koda-v-tinymce-s-pomoshyu-highlight/)
+
 TODO fileuploader (http://dustweb.ru/en/projects/tinymce_images/)
 
 DONE user AUTH (https://docs.djangoproject.com/en/1.5/topics/auth/default/#auth-web-requests)
+TODO automatically add profile when create user - open form to fill profile table.
+
 DONE add posts from frontend
+
 TODO change posts from frontend
+
 TODO delete posts from frontend
 
 DONE ^blog/ ^(?P<year>\d{4})/$
@@ -36,7 +50,9 @@ DONE ^blog/ ^(?P<year>\d{4})/$
 TODO access links for previous issue
 
 TODO add paginator for sorted by year and year-month
+
 DONE add jquery profile block login form
+
 DONE extend User model (http://ryanwest.info/blog/2011/django-tip-5-extending-contrib-auth-models-user/  from django 1.5 use AUTH_USER_MODEL
 
 TODO find save() got an unexpected keyword argument 'force_insert' when try login user
@@ -44,6 +60,7 @@ TODO find save() got an unexpected keyword argument 'force_insert' when try logi
 http://www.odmin4eg.ru/2011/django-registration-primer/)
 
 4/5 DONE styling for user profile block and buttons
+
 DONE resize profile no-photo
 
 TODO Unit tests

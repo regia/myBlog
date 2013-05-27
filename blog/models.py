@@ -43,8 +43,8 @@ class Profile(models.Model):
         image.save(self.userpic.path)
 
 
-def user_post_save(sender, instance, *args, **kwargs):
-    # Creates user profile
-    profile, new = Profile.objects.get_or_create(user=instance)
-
-post_save.connect(user_post_save, User)
+# def user_post_save(sender, instance, *args, **kwargs):
+#     # Creates user profile
+#     profile, new = Profile.objects.get_or_create(user=instance)
+#
+# post_save.connect(user_post_save, User)
