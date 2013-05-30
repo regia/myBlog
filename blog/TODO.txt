@@ -43,6 +43,8 @@ TODO change posts from frontend
 
 DONE delete posts from frontend
 
+TODO add actins on the post page
+
 TODO fix issue with right redirects from login required.
 
 DONE ^blog/ ^(?P<year>\d{4})/$
