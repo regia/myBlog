@@ -1,6 +1,6 @@
 import json
 from django.contrib.auth.decorators import permission_required
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.views.decorators.csrf import csrf_protect
 from blog.models import Post
 from django.shortcuts import render_to_response
@@ -105,13 +105,22 @@ def change_post(request):
     pass
 
 
-@permission_required('blog.delete_post')
-def delete_post(request):
-    pass
+@permission_required('blog.delete_post', login_url='/blog/login_required/')
+def delete_post(request, slug_id):
+    if slug_id:
+        post = Post.objects.get(slug=slug_id)
+        post.delete()
+        return HttpResponseRedirect('/blog/')
+    else:
+        raise Http404
 
 
 def show_message(request):
     message = {'message': ''}
-    if "login_required" in request.path:
+    #if "login_required" in request.path:
+    if 'add' in request.META['QUERY_STRING']:
         message['message'] = "Please sign in first or you don't have enough rights to add post"
-        return render_to_response('login_required.html', {'message': message}, context_instance=RequestContext(request))
+    elif 'delete' in request.META['QUERY_STRING']:
+        message['message'] = "Please sign in first or you don't have enough rights to delete post"
+
+    return render_to_response('login_required.html', {'message': message}, context_instance=RequestContext(request))

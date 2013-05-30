@@ -255,3 +255,15 @@ button {
 .errorlist{
     color: red;
 }
+
+.post_actions{
+
+}
+
+.post_actions > a {
+    color: orange !important;
+}
+
+.post_actions > a:hover {
+    text-decoration: underline !important;
+}

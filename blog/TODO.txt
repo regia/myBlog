@@ -41,7 +41,9 @@ DONE add posts from frontend
 
 TODO change posts from frontend
 
-TODO delete posts from frontend
+DONE delete posts from frontend
+
+TODO fix issue with right redirects from login required.
 
 DONE ^blog/ ^(?P<year>\d{4})/$
      ^blog/ ^(?P<year>\d{4})/(?P<month>\d{2})/$
