@@ -1,16 +1,17 @@
 #coding: utf-8
 from django.db import models
-from django.db.models.signals import post_save
+#from django.db.models.signals import post_save
 from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 from fields import AutoOneToOneField
 from PIL import Image
+from ckeditor.fields import RichTextField
 
 
 class Post(models.Model):
     title = models.CharField(max_length=200, verbose_name="Title")
     slug = models.SlugField(unique=True, verbose_name='SEO URL')
-    description = models.TextField(verbose_name="Description")
+    description = RichTextField(verbose_name="Description")
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     tags = TaggableManager(verbose_name="Tags")

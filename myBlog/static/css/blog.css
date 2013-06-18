@@ -1,0 +1,269 @@
+body {
+    background-color: #ffae22;
+}
+
+article {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Для Firefox */
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Для Safari и Chrome */
+}
+
+header {
+    margin-bottom: 20px;
+
+}
+
+.logo {
+    font-family: cursive;
+    font-size: 3em;
+    text-align: center;
+}
+
+.logo a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#top_menu {
+    margin: 0 auto;
+    max-width: 1040px;
+    padding: 20px;
+    background: #fc0;
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Параметры тени */
+    border-radius: 25px;
+}
+
+.main_menu li {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+#main {
+    max-width: 1090px;
+    margin: 0 auto;
+}
+
+/*clear: both css3 trick*/
+#main:before,
+#main:after {
+    content: "";
+    display: block;
+}
+
+#main:after {
+    clear: both;
+}
+
+#content {
+    width: 800px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-right: 2px dashed black;
+    padding-right: 15px;
+}
+
+#sidebar {
+    width: 250px;
+    float: left;
+    border-left: 2px dashed black;
+    margin-left: -22px;
+    padding-left: 20px;
+
+}
+
+.pagination {
+    padding: 10px;
+    text-align: center;
+}
+
+.pagination a {
+    color: dodgerblue !important;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.pagination a:hover {
+    color: dodgerblue !important;
+    text-decoration: underline !important;
+}
+
+#content a {
+    text-decoration: none;
+    color: black;
+}
+
+#content .tags a {
+    color: #cc0000 !important;
+}
+
+#content .tags a:hover {
+    text-decoration: underline;
+}
+
+.comments {
+    border-top: 1px dotted black;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.comment {
+    display: block;
+    margin-left: 70px;
+}
+
+.comments .title {
+    font-size: 25px;
+}
+
+.comments .add {
+    border: 1px solid #000000;
+    padding: 10px;
+}
+
+.add .title {
+    background-color: #FFFFFF;
+    font-size: 20px !important;
+    position: relative;
+    top: -24px;
+    z-index: 1001;
+}
+
+.title a {
+    color: #cc0000 !important;
+}
+
+.title a:visited {
+    color: #cc0000 !important;
+}
+
+.title a:hover {
+    color: #676662 !important;
+}
+
+.readmore a {
+    color: brown !important;
+}
+
+.readmore a:hover {
+    font-size: 20px;
+}
+
+.copyright {
+    display: block;
+    text-align: center;
+}
+
+.post_body {
+    border: 1px solid gainsboro;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: gainsboro;
+}
+
+.item {
+    display: inline;
+    margin-right: 5px;
+    list-style: none outside none;
+}
+
+#tags_cloud a:hover {
+    text-decoration: none;
+}
+
+.rss ul {
+    list-style-type: none;
+}
+
+.rss ul li {
+    background: url("../img/feed_ico_20x20_black_orange.png") no-repeat scroll 0px 4px transparent;
+    line-height: 25px;
+}
+
+.rss ul li a {
+    padding-left: 30px;
+    text-decoration: none;
+}
+
+.loginform {
+    text-align: center;
+}
+
+.login_errors {
+    background: url("../img/icon_error.gif") no-repeat scroll 5px 0.3em #FFFFCC;
+    border: 1px solid red;
+    color: red;
+    display: block;
+    font-size: 12px !important;
+    font-family: "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    margin: 0 0 3px;
+    padding: 4px 5px 4px 25px;
+}
+
+.loading-ajax {
+    background: none repeat scroll 0 0 rgba(175, 175, 175, 0.7);
+    position: absolute;
+    width: 260px;
+    height: 110px;
+
+}
+
+.loading-ajax IMG {
+    position: relative;
+    left: 15%;
+    top: 40%;
+}
+
+button {
+    background-color: linen;
+    border: 1px solid black;
+    border-radius: 5px 5px 5px 5px;
+    display: inline-block;
+}
+
+.profile {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/*clear: both css3 trick*/
+.profile:before,
+.profile:after {
+    content: "";
+    display: block;
+}
+
+.profile:after {
+    clear: both;
+}
+
+.profile img {
+    float: left;
+    margin-right: 5px;
+    max-width: 130px;
+}
+
+.actions {
+    line-height: 25px;
+    margin-top: 7px;
+}
+
+.errorlist{
+    color: red;
+}
+
+.post_actions{
+
+}
+
+.post_actions > a {
+    color: orange !important;
+}
+
+.post_actions > a:hover {
+    text-decoration: underline !important;
+}

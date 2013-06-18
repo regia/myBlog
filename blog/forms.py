@@ -8,5 +8,5 @@ class AddPostForm(ModelForm):
     class Meta:
         model = Post
 
-    class Media:
-        js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/tiny_mce/textareas_frontend.js')
+    # class Media:
+    #     js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/tiny_mce/textareas_frontend.js')

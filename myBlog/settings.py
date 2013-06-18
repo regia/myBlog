@@ -124,8 +124,6 @@ ROOT_URLCONF = 'myBlog.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'myBlog.wsgi.application'
 
-import os
-
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates').replace('\\', '/'),)
 
 AUTH_PROFILE_MODULE = 'blog.profile'
@@ -144,11 +142,14 @@ INSTALLED_APPS = (
     'blog',
     'tinymce',
     'taggit',
+    'ckeditor',
     'django.contrib.flatpages',
     'django.contrib.sites',
     'django.contrib.comments',
     'debug_toolbar',
 )
+
+CKEDITOR_UPLOAD_PATH = MEDIA_ROOT + "/uploads"
 
 DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.version.VersionDebugPanel',

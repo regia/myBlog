@@ -8,8 +8,8 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_display = ('title', 'slug', 'description', 'created', 'modified')
 
-    class Media:
-        js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/tiny_mce/textareas.js',)
+    # class Media:
+    #     js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/tiny_mce/textareas.js',)
 
 
 class ProfileAdmin(admin.ModelAdmin):
