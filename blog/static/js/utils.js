@@ -80,7 +80,7 @@ $(document).ready(function () {
         }).ajaxError(function () {
             $('.loading-ajax').hide();
         });
-    //autofill slug field from title in add post form
+    //autofill Slug field from title in add post form
     $('.add_form #id_title').on('keyup', function (event) {
         $('.add_form #id_slug').val($(this).val().replace(/\s/g, "-").toLowerCase());
     });
