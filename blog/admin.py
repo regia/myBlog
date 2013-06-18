@@ -9,11 +9,15 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'description', 'created', 'modified')
 
     # class Media:
-    #     js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/tiny_mce/textareas.js',)
+    #     css = {
+    #         'all' : ('/static/css/monokai.css',)
+    #     }
+    #     js = ('/static/js/highlight.pack.js',)
 
 
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('title', 'userpic')
+
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Profile, ProfileAdmin)
