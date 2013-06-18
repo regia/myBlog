@@ -3,13 +3,13 @@
     <article>
         <div class="add_form">
            {{ form.media }}
-         </div>
             <form action="/blog/post/add/" method="post">{% csrf_token %}
                 <table>
                     {{ form.as_table }}
                 </table>
-            <input type="submit" value="Submit" />
-            <input type="button" name="Cancel" value="Cancel" onclick="window.location = '/blog/' " />
-            </form>
+           	 <input type="submit" value="Submit" />
+           	 <input type="button" name="Cancel" value="Cancel" onclick="window.location = '/blog/' " />
+   	    </form>
+    	</div>
     </article>
 {% endblock %}
