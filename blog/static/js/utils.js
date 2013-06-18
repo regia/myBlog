@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    function sign_in(){
+    function sign_in() {
         var username = $('input[name="username"]').val();
         var password = $('input[name="password"]').val();
         $('.login_errors').hide();
@@ -66,8 +66,8 @@ $(document).ready(function () {
     $('#sign_in').on('click', sign_in);
 
     // add event when press enter on input field
-    $('#id_password').on('keypress', function(event){
-        if(event.which == 13){
+    $('#id_password').on('keypress', function (event) {
+        if (event.which == 13) {
             sign_in();
         }
     });
@@ -80,4 +80,8 @@ $(document).ready(function () {
         }).ajaxError(function () {
             $('.loading-ajax').hide();
         });
+    //autofill slug field from title in add post form
+    $('.add_form #id_title').on('keyup', function (event) {
+        $('.add_form #id_slug').val($(this).val().replace(/\s/g, "-").toLowerCase());
+    });
 });
