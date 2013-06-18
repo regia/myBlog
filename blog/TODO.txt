@@ -34,9 +34,12 @@ DONE plugin with <pre><code> button to tinymce (http://owlman.net/django/podsvet
 
 TODO fileuploader (http://dustweb.ru/en/projects/tinymce_images/)
 
-TODO alternatively to use tinyMCE integrate django-ckeditor with file uploads
+DONE alternatively to use tinyMCE integrate django-ckeditor with file uploads
 from the box (https://github.com/shaunsephton/django-ckeditor
 http://it-almanah.ru/posts/topic/9/)
+
+TODO integrate elFinder in ckeditor
+(http://linuxtime.org/article/integracija-ckeditor-i-elfinder-v-django/)
 
 DONE user AUTH (https://docs.djangoproject.com/en/1.5/topics/auth/default/#auth-web-requests)
 TODO automatically add profile when create user - open form to fill profile table.
