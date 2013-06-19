@@ -38,6 +38,8 @@ DONE alternatively to use tinyMCE integrate django-ckeditor with file uploads
 from the box (https://github.com/shaunsephton/django-ckeditor
 http://it-almanah.ru/posts/topic/9/)
 
+TODO ckeditor ->  diff config for diff text areas(admin, frontend etc)
+
 TODO create pre>code plugin for ckeditor
 
 TODO integrate elFinder in ckeditor
