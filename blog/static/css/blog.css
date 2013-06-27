@@ -261,7 +261,9 @@ button {
 }
 
 .post_actions > a {
-    color: orange !important;
+    color: red !important;
+    font-size: 1.3em;
+
 }
 
 .post_actions > a:hover {
