@@ -54,7 +54,7 @@ TODO change posts from frontend
 
 DONE delete posts from frontend
 
-TODO add actions on the post page
+TODO add actions on the post page and need styling
 
 TODO fix issue with right redirects from login required.
 
@@ -77,5 +77,7 @@ http://www.odmin4eg.ru/2011/django-registration-primer/)
 4/5 DONE styling for user profile block and buttons
 
 DONE resize profile no-photo
+
+
 
 TODO Unit tests
