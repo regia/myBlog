@@ -89,13 +89,10 @@ def log_out(request):
 @csrf_protect
 @permission_required('blog.add_post', login_url='/blog/login_required/')
 def add_post(request):
-    if request.method == 'POST':
-        form = AddPostForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/blog')
-    else:
-        form = AddPostForm()
+    form = AddPostForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/blog')
 
     return render_to_response('add_post.html', {'form': form}, context_instance=RequestContext(request))
 
