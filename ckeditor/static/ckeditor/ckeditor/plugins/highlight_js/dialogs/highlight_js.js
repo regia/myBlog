@@ -74,7 +74,6 @@ CKEDITOR.dialog.add( 'highlight_js', function( editor ) {
                         onChange: function( api ) {
                         // this = CKEDITOR.ui.dialog.select
                          //alert( 'Current value: ' + this.getValue() );
-                         console.log(editor.lang.highlight_js.highlight.selectLabel);
                         }
                     },
                     {
