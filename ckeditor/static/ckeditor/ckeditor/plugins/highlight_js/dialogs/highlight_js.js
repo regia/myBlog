@@ -1,6 +1,6 @@
 CKEDITOR.dialog.add( 'highlight_js', function( editor ) {
     return {
-        title: "test",
+        title: editor.lang.highlight_js.highlight.dialogTitle,
         minWidth: 800,
         minHeight: 500,
         contents: [
@@ -11,7 +11,7 @@ CKEDITOR.dialog.add( 'highlight_js', function( editor ) {
                     {
                         type: 'select',
                         id: 'code_lan',
-                        label: 'Select code language',
+                        label: editor.lang.highlight_js.highlight.selectLabel,
                         items: [
                                 [ 'Auto' ],
                                 [ 'no-highlight' ],
@@ -74,6 +74,7 @@ CKEDITOR.dialog.add( 'highlight_js', function( editor ) {
                         onChange: function( api ) {
                         // this = CKEDITOR.ui.dialog.select
                          //alert( 'Current value: ' + this.getValue() );
+                         console.log(editor.lang.highlight_js.highlight.selectLabel);
                         }
                     },
                     {
