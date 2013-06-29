@@ -40,7 +40,7 @@ http://it-almanah.ru/posts/topic/9/)
 
 TODO ckeditor ->  diff config for diff text areas(admin, frontend etc)
 
-TODO create pre>code plugin for ckeditor
+DONE create pre>code plugin for ckeditor
 
 TODO integrate elFinder in ckeditor
 (http://linuxtime.org/article/integracija-ckeditor-i-elfinder-v-django/)
