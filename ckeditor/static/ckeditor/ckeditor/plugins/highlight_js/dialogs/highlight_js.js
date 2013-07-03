@@ -13,102 +13,136 @@ CKEDITOR.dialog.add( 'highlight_js', function( editor ) {
                         id: 'code_lan',
                         label: editor.lang.highlight_js.highlight.selectLabel,
                         items: [
-                                [ 'Auto' ],
-                                [ 'no-highlight' ],
-                                [ 'Bash' ],
-                                [ 'Diff' ],
-                                [ 'JSON' ],
+                                [ 'Auto', 'auto' ],
+                                [ 'no-highlight', 'no-highlight' ],
+                                ['--------------popular----------------', 'popular'],
+                                [ 'ActionScript', 'actionscript' ],
+                                [ 'Bash', 'bash' ],
+                                [ 'Brainfuck', 'brainfuck' ],
                                 [ 'C#', 'cs' ],
-                                [ 'HTML', 'xml' ],
-                                [ 'XML', 'xml' ],
-                                [ 'JAVA' ],
-                                [ 'Python' ],
                                 [ 'C++', 'cpp' ],
-                                [ 'HTTP' ],
-                                [ 'JavaScript' ],
-                                [ 'Ruby' ],
-                                [ 'CSS' ],
-                                [ 'PHP' ],
-                                [ 'ini' ],
-                                [ 'SQL' ],
-                                [ 'Perl' ],
-                                [ " 1C " ],
-                                [ "AVR Assembler", 'avrasm"' ],
-                                [ "ActionScript" ],
-                                [ "Apache" ],
-                                [ "AppleScript" ],
-                                [ "Axapta" ],
-                                [ "Brainfuck" ],
-                                [ "CMake" ],
-                                [ "Clojure" ],
-                                [ "CoffeeScript" ],
-                                [ "D" ],
-                                [ "DOS .bat", 'dos'],
-                                [ "Delphi" ],
-                                [ "Django" ],
-                                [ "Erlang" ],
-                                [ "OpenGL Shading Language", 'glsl' ],
-                                [ "Go" ],
-                                [ 'Haskell' ],
-                                [ "Lisp" ],
-                                [ "Lua" ],
-                                [ "MEL" ],
-                                [ "Markdown" ],
-                                [ "Matlab" ],
-                                [ "Nginx" ],
-                                [ "Objective C", 'objectivec' ],
-                                [ "Parser3" ],
-                                [ "Python profile", 'profile' ],
-                                [ "R" ],
-                                [ "RenderMan RIB", 'rib"' ],
-                                [ "RenderMan RSL", 'rsl' ],
-                                [ "Rust" ],
-                                [ "Scala" ],
-                                [ "Smalltalk" ],
-                                [ "TeX" ],
-                                [ "VBScript" ],
-                                [ "VHDL" ],
-                                [ "Vala" ]
+                                [ 'CSS', 'css' ],
+                                [ 'CoffeeScript', 'coffeescript' ],
+                                [ 'D', 'd' ],
+                                [ 'Delphi', 'delphi' ],
+                                [ 'Django', 'django' ],
+                                [ 'DOS .bat', 'dos'],
+                                [ 'Erlang', 'erlang' ],
+                                [ 'Go', 'go' ],
+                                [ 'HTML', 'xml' ],
+                                [ 'HTTP', 'http' ],
+                                [ 'Haskell', 'haskell' ],
+                                [ 'ini', 'ini' ],
+                                [ 'JAVA', 'java' ],
+                                [ 'JSON', 'json' ],
+                                [ 'JavaScript', 'javascript' ],
+                                [ 'Lisp', 'lisp' ],
+                                [ 'Lua', 'lua' ],
+                                [ 'Markdown', 'markdown' ],
+                                [ 'Objective C', 'objectivec' ],
+                                [ 'PHP', 'php' ],
+                                [ 'Perl', 'perl' ],
+                                [ 'Python', 'python' ],
+                                [ 'Python profile', 'profile' ],
+                                [ 'R', 'r' ],
+                                [ 'Ruby', 'ruby' ],
+                                [ 'SQL', 'sql' ],
+                                [ 'Scala', 'scala' ],
+                                [ 'Smalltalk', 'smalltalk' ],
+                                [ 'TeX', 'tex' ],
+                                [ 'XML', 'xml' ],
+                                ['--------------other------------------', 'other'],
+                                [ '1C ', '1c' ],
+                                [ 'AVR Assembler', 'avrasm"' ],
+                                [ 'Apache', 'apache' ],
+                                [ 'AppleScript', 'applescript' ],
+                                [ 'Axapta', 'axapta' ],
+                                [ 'CMake', 'cmake' ],
+                                [ 'Clojure', 'clojure' ],
+                                [ 'Diff', 'diff' ],
+                                [ 'MEL', 'mel' ],
+                                [ 'Matlab', 'matlab' ],
+                                [ 'Nginx', 'ngix' ],
+                                [ 'OpenGL Shading Language', 'glsl' ],
+                                [ 'Parser3', 'parser3' ],
+                                [ 'RenderMan RIB', 'rib' ],
+                                [ 'RenderMan RSL', 'rsl' ],
+                                [ 'Rust', 'rust' ],
+                                [ 'VBScript', 'vbscript' ],
+                                [ 'VHDL', 'vhdl' ],
+                                [ 'Vala', 'vala' ]
                               ],
-                        'default': 'Auto',
-                        onChange: function( api ) {
-                        // this = CKEDITOR.ui.dialog.select
-                         //alert( 'Current value: ' + this.getValue() );
+                        'default': 'auto',
+                        onChange: function(api) {
+                            if(this.getValue() === 'popular' || this.getValue() === 'other'){
+                                this.setValue(previous_value);
+                            } else{
+                                previous_value = this.getValue();
+                            }
+                        },
+                        setup: function(element){
+                            this.setValue(element.getAttribute( "class"));
+                        },
+                        commit: function(element){
+                            var class_code = this.getValue();
+                            if(class_code!=='auto'){
+                                element.setAttribute("class", this.getValue());
+                            }else{
+                                element.removeAttribute( 'class' );
+                            }
                         }
                     },
                     {
                         type: 'textarea',
                         id: 'pre_code',
-                        rows: 22,
-                        style: "width: 100%"
-                        /*setup: function(data) {
-                            if (data.code)
-                                this.setValue(data.code);
+                        rows: 20,
+                        style: "width: 100%",
+                        setup: function(element) {
+                            this.setValue( element.getText() );
                         },
-                        commit: function(data) {
-                            data.code = this.getValue();
-                        }*/
+                        commit: function(element) {
+                            element.setText( this.getValue() );
+                        }
                     }
                 ]
             }
 
         ],
-        onOk: function() {
-            var dialog = this;
+        onShow: function(){
+            var selection = editor.getSelection();
+            var element = selection.getStartElement();
 
-            var pre = editor.document.createElement( 'pre' );
-            var code = editor.document.createElement( 'code' );
-            var code_class = dialog.getValueOf( 'tab-basic', 'code_lan' ).toLowerCase();
-
-            if(code_class !== "auto"){
-                code.setAttribute( 'class', code_class );
+            if (element){
+                element = element.getAscendant( 'code', true );
             }
 
-            code.setText( dialog.getValueOf( 'tab-basic', 'pre_code' ) );
+            if (!element || element.getName() !== 'code'){
+                previous_value = 'auto';
+                element = editor.document.createElement('code');
+                this.insertMode = true;
+            }
+            else{
+                this.insertMode = false;
+            }
 
-            pre.append(code);
+            this.element = element;
 
-            editor.insertElement(pre);
+            if (!this.insertMode){
+                this.setupContent(this.element);
+            }
+        },
+        onOk: function() {
+            var dialog = this;
+            var code = this.element;
+
+            this.commitContent(code);
+
+            if (this.insertMode){
+                var pre = editor.document.createElement('pre');
+                pre.append(code);
+
+                editor.insertElement(pre);
+            }
         }
     };
 });
