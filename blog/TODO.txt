@@ -2,7 +2,8 @@ DONE links on posts like /blog/year/month/slug
 
 DONE Pagination
 
-HALF-DONE Tags and tags cloud(show tag cloud with diff styling but don't know how for now)
+DONE Tags and tags cloud
+TODO show tag cloud with diff styling but don't know how for now
 
 DONE add last posts block(5-10)
 
@@ -30,17 +31,13 @@ DONE RSS fix posted links(need change site domain name)
 TODO Search (for MySQL/Postgres - spfinx http://habrahabr.ru/post/136261/
 	for sqlite3 FTS2,3 http://www.rkblog.rk.edu.pl/w/p/fulltext-search-sqlite-and-django-app/ )
 
-DONE plugin with <pre><code> button for tinymce (http://owlman.net/django/podsvetka-koda-v-tinymce-s-pomoshyu-highlight/)
-
-TODO? fileuploader (http://dustweb.ru/en/projects/tinymce_images/)
-
-DONE alternatively to use tinyMCE integrate django-ckeditor with file uploads
-from the box (https://github.com/shaunsephton/django-ckeditor
-http://it-almanah.ru/posts/topic/9/)
+DONE alternatively to use tinyMCE integrate django-ckeditor with file uploads from the box (https://github.com/shaunsephton/django-ckeditor http://it-almanah.ru/posts/topic/9/)
 
 TODO ckeditor ->  diff config for diff text areas(admin, frontend etc)
 
 DONE create pre>code plugin for ckeditor
+
+TODO an issue when try updated post with pre code blocks with css class(<code class="python">) ckeditor upload pre code blocks without class
 
 TODO integrate elFinder in ckeditor
 (http://linuxtime.org/article/integracija-ckeditor-i-elfinder-v-django/)
