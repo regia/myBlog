@@ -3,6 +3,9 @@ DONE links on posts like /blog/year/month/slug
 DONE Pagination
 
 DONE Tags and tags cloud
+
+TODO add viewed n times for posts
+
 TODO show tag cloud with diff styling but don't know how for now
 
 DONE add last posts block(5-10)
