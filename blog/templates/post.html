@@ -5,7 +5,11 @@
 
         <div id="meta">
             created on: {{ post.created|date:"M d, Y, H:i" }}
-            {% if post.modified != post.created %}<br/>modified on: {{ post.modified|date:"M d, Y, H:i" }} {% endif %}
+            {% if post.modified != post.created %}
+                <br/>modified on: {{ post.modified|date:"M d, Y, H:i" }}
+            {% endif %}
+            <br />
+            <span>post viewed {{ post.count_visited }} times</span>
             <br/><br/>
         </div>
         <div class="post_body">
@@ -18,7 +22,7 @@
                 <b>tags</b>:
                 {% for tag in post.tags.all %}
                     <a href="/blog/tag/{{ tag }}">{{ tag }}</a>
-                    {% if not forloop.last %} , {% endif %}
+                    {% if not forloop.last %}, {% endif %}
                 {% endfor %}
             {% else %}
                 <b>tags</b>: None

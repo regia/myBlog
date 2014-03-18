@@ -2,7 +2,7 @@
     <span class="title">Comments</span>
     {% load comments %}
     {% get_comment_count for post as comment_count %}
-    <p>{{ comment_count }} comments have been added.</p>
+    <p>{{ comment_count }} comments has been added.</p>
     {% get_comment_list for post as comment_list %}
     {% for comment in comment_list %}
         <p>Posted by: <i>{{ comment.user_name }}</i> on {{ comment.submit_date }}</p>

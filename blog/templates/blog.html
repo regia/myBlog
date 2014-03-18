@@ -8,8 +8,11 @@
 
             <div class="meta">
                 <span title="{{ post.created|date:"M d, Y, H:i" }}">created {{ post.created|timesince }} ago </span>
-                {% if post.modified != post.created %}<br/>modified on:
-                    {{ post.modified|date:"M d, Y, H:i" }} {% endif %}
+                {% if post.modified != post.created %}
+                    <br/>modified on: {{ post.modified|date:"M d, Y, H:i" }}
+                {% endif %}
+                <br />
+                <span>post viewed {{ post.count_visited }} times</span>
             </div>
             <br/>
 

@@ -33,6 +33,8 @@ def mainpage(request, pages="1"):
 
 def post(request, year, month, slug_id):
     post_detail = Post.objects.get(slug=slug_id)
+    post_detail.count_visited += 1
+    post_detail.save()
     return render_to_response('post.html', {'post': post_detail}, context_instance=RequestContext(request))
 
 

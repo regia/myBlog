@@ -14,6 +14,7 @@ class Post(models.Model):
     description = RichTextField(verbose_name="Description")
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+    count_visited = models.IntegerField()
     tags = TaggableManager(verbose_name="Tags")
 
     def __unicode__(self):
