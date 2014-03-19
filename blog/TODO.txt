@@ -60,7 +60,7 @@ DONE delete posts from frontend
 
 TODO add actions on the post page and need styling
 
-TODO fix issue with right redirects from login required.
+TODO fix issue with right redirects from log_in def.
 
 DONE ^blog/ ^(?P<year>\d{4})/$
      ^blog/ ^(?P<year>\d{4})/(?P<month>\d{2})/$
