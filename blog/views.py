@@ -8,7 +8,7 @@ from django.template import RequestContext
 from django.core.paginator import EmptyPage, PageNotAnInteger
 from utils.mypaginator import MyPaginator
 from django.contrib.auth import authenticate, login, logout
-from forms import AddPostForm, RegistrationForm
+from forms import AddPostForm, RegistrationForm, ProfileForm
 from django.contrib.auth.models import Group, User
 
 
@@ -136,7 +136,19 @@ def registration(request):
             new_user = User.objects.get(username=request.POST.get('username'))
             new_user.groups.add(group_visitor)
             new_user.save()
-            return HttpResponseRedirect("/blog/")
+            return HttpResponseRedirect("/blog/profile/")
     else:
         form = RegistrationForm()
     return render_to_response("registration.html", {'form': form}, context_instance=RequestContext(request))
+
+
+@csrf_protect
+def profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/blog/")
+    else:
+        form = ProfileForm()
+    return render_to_response("edit_profile.html", {'form': form}, context_instance=RequestContext(request))
