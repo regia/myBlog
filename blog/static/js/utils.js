@@ -51,6 +51,7 @@ $(document).ready(function () {
     $('.login').on('click', function () {
         $('.loginform').fadeIn("slow", "linear");
         $(this).hide();
+        $('.sign_up').hide();
     });
 
 
@@ -60,6 +61,7 @@ $(document).ready(function () {
         $('.login_errors').hide();
         $('.loginform').fadeOut(500);
         $('.login').show(1000);
+        $('.sign_up').show(1000);
     });
 
     // ajax request to log in
@@ -83,5 +85,10 @@ $(document).ready(function () {
     //autofill Slug field from title in add post form
     $('.add_form #id_title').on('keyup', function (event) {
         $('.add_form #id_slug').val($(this).val().replace(/\s/g, "-").toLowerCase());
+    });
+
+    //sign up event
+    $('.sign_up').on('click', function(){
+        window.location.href = '/blog/registration/';
     });
 });

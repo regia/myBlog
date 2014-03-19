@@ -18,4 +18,5 @@ urlpatterns = patterns('',
                        url(r'^logout/$', 'blog.views.log_out'),
                        url(r'^post/add/$', 'blog.views.add_post'),
                        url(r'^post/delete/(?P<slug_id>.*)/$', 'blog.views.delete_post'),
+                       url(r'^registration', 'blog.views.registration'),
 )

@@ -8,7 +8,8 @@ from django.template import RequestContext
 from django.core.paginator import EmptyPage, PageNotAnInteger
 from utils.mypaginator import MyPaginator
 from django.contrib.auth import authenticate, login, logout
-from forms import AddPostForm
+from forms import AddPostForm, RegistrationForm
+from django.contrib.auth.models import Group, User
 
 
 def tagpage(request, tag):
@@ -123,3 +124,19 @@ def show_message(request):
         message['message'] = "Please sign in first or you don't have enough rights to delete post"
 
     return render_to_response('login_required.html', {'message': message}, context_instance=RequestContext(request))
+
+
+@csrf_protect
+def registration(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            group_visitor = Group.objects.get(name='visitor')
+            new_user = User.objects.get(username=request.POST.get('username'))
+            new_user.groups.add(group_visitor)
+            new_user.save()
+            return HttpResponseRedirect("/blog/")
+    else:
+        form = RegistrationForm()
+    return render_to_response("registration.html", {'form': form}, context_instance=RequestContext(request))
