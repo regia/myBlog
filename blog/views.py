@@ -1,15 +1,17 @@
 import json
-from django.contrib.auth.decorators import permission_required
+
+from django.contrib.auth.decorators import permission_required, login_required
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.views.decorators.csrf import csrf_protect
-from blog.models import Post
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.paginator import EmptyPage, PageNotAnInteger
-from utils.mypaginator import MyPaginator
 from django.contrib.auth import authenticate, login, logout
-from forms import AddPostForm, RegistrationForm, ProfileForm
 from django.contrib.auth.models import Group, User
+
+from blog.models import Post
+from utils.mypaginator import MyPaginator
+from forms import AddPostForm, RegistrationForm, ProfileForm
 
 
 def tagpage(request, tag):
@@ -122,6 +124,10 @@ def show_message(request):
         message['message'] = "Please sign in first or you don't have enough rights to add post"
     elif 'delete' in request.META['QUERY_STRING']:
         message['message'] = "Please sign in first or you don't have enough rights to delete post"
+    elif 'profile' in request.META['QUERY_STRING']:
+        message['message'] = "Please sign in first to be able edit your profile"
+    else:
+        message['message'] = "Please sign in first!"
 
     return render_to_response('login_required.html', {'message': message}, context_instance=RequestContext(request))
 
@@ -136,18 +142,23 @@ def registration(request):
             new_user = User.objects.get(username=request.POST.get('username'))
             new_user.groups.add(group_visitor)
             new_user.save()
-            return HttpResponseRedirect("/blog/profile/")
+            #return HttpResponseRedirect("/blog/profile/")
+            return HttpResponseRedirect("/blog/")
     else:
         form = RegistrationForm()
     return render_to_response("registration.html", {'form': form}, context_instance=RequestContext(request))
 
 
 @csrf_protect
+@login_required(login_url='/blog/login_required/')
 def profile(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            instance.User = request.user.username
+            instance.title = request.user.username
+            instance.save()
             return HttpResponseRedirect("/blog/")
     else:
         form = ProfileForm()

@@ -11,6 +11,9 @@
             {% if perms.blog.add_post %}
                 <a href="/blog/post/add/">Add post</a>
             {% endif %}
+            <br/>
+            <a href="/blog/profile/">Edit Profile</a>
+
             <form method="post" action="{% url 'blog.views.log_out' %}">
                 {% csrf_token %}
                 <button type="submit">Sign out</button>

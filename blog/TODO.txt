@@ -48,7 +48,9 @@ TODO integrate elFinder in ckeditor
 DONE user AUTH (https://docs.djangoproject.com/en/1.5/topics/auth/default/#auth-web-requests)
 TODO automatically add profile when create user - open form to fill profile table.
 
-TODO change profile view (/blog/profile/) to can go by profile only if you are logged in and set user to current user
+DONE change profile view (/blog/profile/) to can go by profile only if you are logged in and set user to current user
+
+TODO added posibility to load profile with existing user data
 
 DONE add posts from frontend
 

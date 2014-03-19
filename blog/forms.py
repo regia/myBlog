@@ -3,8 +3,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from models import Post, Profile
 from django.forms import ModelForm
+
+from models import Post, Profile
 
 
 class AddPostForm(ModelForm):
@@ -33,3 +34,4 @@ class RegistrationForm(UserCreationForm):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
+        fields = ("userpic",)
